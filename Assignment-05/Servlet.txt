@@ -1,0 +1,75 @@
+/**************************************************************************************************
+Name:Akshay Balasaheb Nikale                                                           Roll No:17
+Sub: Advanced Java                                                                                Batch:A2
+Assignment No:Servlet Programe for Perform Airithmetic Operation
+**************************************************************************************************/
+//Myak.java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Myak extends HttpServlet
+{
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+    {
+        try
+        {
+        int x= Integer.parseInt(req.getParameter("txt1"));
+        int y= Integer.parseInt(req.getParameter("txt2"));
+        res.setContentType("text/html");
+        PrintWriter out= res.getWriter();
+        if(req.getParameter("b1")!=null)
+        {
+            out.println("<h1>Addition Is:</h1>"+(x+y));
+        }
+        if(req.getParameter("b2")!=null)
+        {
+            out.println("<h1>Substraction Is:</h1>"+(x-y));
+        }
+        if(req.getParameter("b3")!=null)
+        {
+            out.println("<h1>Multiplication Is:</h1>"+(x*y));
+        }
+        if(req.getParameter("b4")!=null)
+        {
+            out.println("<h1>Division Is:</h1>"+(x/y));
+        }
+   
+        }
+        catch(Exception e)
+        {
+
+        }
+    }
+}
+
+
+ak.html
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+
+      <form action="Myak" method="get">
+          
+          Enter 1st No:
+          <input type="text" name="txt1" id="t1">
+          </br></br>
+          Enter 2nd No:
+          <input type="text" name="txt2" id="t2">
+          </br></br>
+          <input type="submit" value="Add" name="b1">
+          <input type="submit" value="Sub" name="b2">
+          <input type="submit" value="Mult" name="b3">
+          <input type="submit" value="Div" name="b4">
+      
+      </form>
+  </body>
+</html>
